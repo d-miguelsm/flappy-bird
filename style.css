@@ -1,0 +1,224 @@
+/*
+===================
+ Fonts Import
+===================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+@font-face{
+  font-family: 'Pixel';
+  src:url('fonts/Pixel.ttf');
+} 
+
+/*
+===================
+ Variables
+===================
+*/
+
+:root {
+  /* Game colors */
+  /* primary color dark tones */
+  --primary-color1: hsl(207, 100%, 11%);
+  --primary-color2: hsl(210, 76%, 17%);
+  --primary-color3: hsl(210, 85%, 26%);
+  --primary-color4: hsl(210, 82%, 36%);
+  --primary-color5: hsl(210, 84%, 46%);
+  /* primary/main color */
+  --primary-color: hsl(210, 92%, 24%);
+  /* primary color light tones */
+  --primary-color6: hsl(210, 78%, 33%);
+  --primary-color7: hsl(210, 64%, 39%);
+  --primary-color8: hsl(210, 47%, 48%);
+  --primary-color9: hsl(210, 61%, 61%);
+  --primary-color10: hsl(210, 93%, 74%);
+  /* Standard Colors */
+  --color-black: #111;
+  --color-white: #fff;
+
+  /* Fonts */
+  --fonte-primaria: 'Josefin Sans', sans-serif;
+  --fonte-secundaria: 'Dongle', sans-serif;
+  --fonte-pontuacao: 'Pixel';
+
+  /* Settings */
+  --border-flappy: 5px solid var(--primary-color1);
+  --border-cano: 2px solid var(--color-black);
+  --spacing: 0.2rem;
+  --radius: 6.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  --max-width: 1000px;
+  --linear-background: linear-gradient(90deg, #639301, #A5E82E);
+}
+
+/*
+===================
+ Global Styles
+===================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  max-height: 39rem;
+}
+
+body {
+
+  color: var(--color-black);
+  background: var(--primary-color6);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  font-family: var(--fonte-primaria);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+}
+
+/*
+===================
+ Home Bar
+===================
+*/
+
+.homeContainer {
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-color8);
+  background: var(--color-white);
+  height: 3rem;
+  box-shadow: var(--dark-shadow);
+}
+
+.homeBar {
+  display: flex;
+  flex-direction: row;
+  max-width: var(--max-width);
+  width: 100vw;
+  margin: 0rem auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*
+===================
+ Flappy Styles
+===================
+*/
+
+[wm-flappy] {
+  position: relative;
+  border: var(--border-flappy);
+  width: 90vw;
+  height: 80vh;
+  margin: 3rem auto;
+  background: var(--primary-color10);
+  overflow: hidden;
+}
+
+.passaro{
+  position: absolute;
+  width: 4rem;
+  left: calc(50% - 2rem);
+}
+
+.parDeBarreiras{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.barreira{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barreira .borda{
+  height: 2rem;
+  width: 8rem;
+  background: var(--linear-background);
+  border: var(--border-cano);
+}
+
+.barreira .corpo{
+  height: 8rem;
+  width: 7.5rem;
+  background: var(--linear-background);
+  border-right: var(--border-cano);
+  border-left: var(--border-cano);
+}
+
+.progresso{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--fonte-pontuacao);
+  font-size: 3rem;
+  z-index: 100;
+}
+
+/*
+===================
+ Play Styles
+===================
+*/
+
+.startContainer {
+  display: flex;
+  position: relative;
+  top: 40%;
+  left: 40%;
+  background: var(--primary-color1);
+  width: 170px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.startGame{
+  text-transform: capitalize;
+  font-family: var(--fonte-primaria);
+  font-size: 4rem;
+  color: var(--color-white);
+  background: transparent;
+  border:none;
+  box-shadow: var(--dark-shadow);
+  padding: 10px;
+}
+
+.startGame:hover{
+  background: var(--primary-color5);
+}
+.startGame:active{
+  box-shadow: none;
+}
